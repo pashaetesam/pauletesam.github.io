@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Paul Etesam Analyst Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+						<h1>Paul Etesam Analyst Portfolio</h1>
+<p style="text-align: left"> <span> <i class='no-italics'> Data Analyst with 5+ years’ experience in design, development of complex reports, dashboards with strong analytical ability to solve complex problems. Skill in SQL, Power BI, Power Query, Advanced Excel </i>
+</span> </p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><img src="images/pauletesam2.jpg" alt="" /></a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Paul Etesam Analyst Portfolio</a></li>
+						
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									
+									<p style="text-align: left"><h2><a  href="#">Hotel Revenue Dashboard 
+									</a></h2></p>
+									
+									<p style="text-align: left"> <span>  <i class='no-italics'>For this A SQL Power BI Project, I uploaded Excel sheets to  MS SQL, and then created a new HotelProject Database, connected it to Power BI to answer stakeholders following questions :
+											<br />
+										    Is Hotel revenue increasing by year? <br />
+											Is there a trend on quests personal cars and parking lot size?<br />
+										    Explore seasonality?<br /> </p>
+										</i>
+									</span>
+											
+								</header>
+								<a href="#" class="image main"><img src="images/hotel.jpg" alt="" /></a>
+								<p style="text-align: left"><b><span><i class='no-italics'> Here is the SQL code for this project:</i>
+								</span></b>
+									<br />
+									with hotels as (
+select * from dbo.['2018']
+union
+select * from dbo.['2019']
+union
+select * from dbo.['2020'])
+
+
+Select * from hotels as h
+left join dbo.market_segment as m
+on h.market_segment = m.market_segment
+left join dbo.meal_cost as c
+on c.meal = h.meal
+									<br /> </p>
+								
+								
+							</article>
+
+						<!-- Posts -->
+						<article class="post featured">
+							<header class="major">
+									<header>
+										
+										<h2><a href="#">Absenteeism Analytics<br />
+										</a></h2>
+									</header>
+									<p style="text-align: left"> <span> <i class='no-italics'>  In this project we have used HR dataset about absenteeism and health. I connected to Microsoft SQL Server, created a new database, 
+									 uploaded Data to the Database, wrote SQL join queries, connected to Power BI, and created Dashboard per requirement.</p>
+									<a href="#" class="image fit"><img src="images/absentjpg.jpg" alt="" /></a>
+									<p style="text-align: left"><b>Here is the SQL code for this project:</b>
+										<br />
+										
+											
+										 
+select   
+a.id,
+c.Reason,
+case when Month_of_absence in (12,1,2) then 'Winter'
+     when Month_of_absence in (3,4,5) then 'Spring'
+	 when Month_of_absence in (6,7,8) then 'Summer'
+	 when Month_of_absence in (9,10,11) then 'Fall'
+	 else 'Unknown'
+	 end as 'Season Name',
+case when Body_mass_index &lt; 18.5 then 'Under Weight'
+     when Body_mass_index between  18.5 and 25 then 'Healthy'
+	 when Body_mass_index between  25 and 30 then 'Over Weight'
+	 when Body_mass_index between  18.5 and 24.9 then 'Obese'
+	 else 'Unknown'
+	 end as 'BMI Category',
+Month_of_absence,
+Day_of_the_week,
+Transportation_expense,
+Education,
+Son,
+Social_drinker,
+Social_smoker,
+Pet,Disciplinary_failure,
+Age,
+Work_load_Average_day,
+Absenteeism_time_in_hours
+from dbo.Absenteeism a
+left join dbo.compensation b
+on b.ID = a.ID
+left join dbo.Reasons c
+on a.Reason_for_absence = c.Number;	
+
+</i>
+</span>
+ <br /> </p>
+									
+								</article>
+								
+							</section>
+
+						
+
+					
+
+				<!-- Footer -->
+				
+						<section class="split contact">
+								
+							<section>
+								<h3>Email</h3>
+								<p> pauletesam@outlook.com</p>
+							</section>
+							<section>
+								<ul class="icons alt">
+									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
